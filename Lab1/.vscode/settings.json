@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "factory\\src"
+    ],
+    "java.project.outputPath": "factory\\bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ],
+    "java.dependency.packagePresentation": "flat"
+}
