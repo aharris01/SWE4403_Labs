@@ -1,0 +1,5 @@
+Account 1 withdrew 100$
+Account 2 deposited 250$
+Account 2 withdrew 5$
+Account 2 sent 50$ to account 1
+Account 3 sent 1000$ to account 2

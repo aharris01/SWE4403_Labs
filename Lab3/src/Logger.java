@@ -29,7 +29,7 @@ public class Logger {
         }
     }
 
-    public void closeLogger(){
+    public static void closeLogger(){
         try{
             file.close();
         } catch(Exception e){
