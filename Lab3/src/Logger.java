@@ -1,16 +1,24 @@
 import java.io.*;
 
 public class Logger {
+    private static Logger logger;
     private String fileName;
-    private PrintWriter file;
+    private static PrintWriter file;
 
-    public Logger(String fileName) {
+    private Logger(String fileName) {
         this.fileName = fileName;
         startLogger();
     }
     public void write(String message) {
         System.out.println("Writing a message to the log.");
         file.println(message);
+    }
+
+    public static Logger getInstance(String fileName){
+        if(file == null){
+            logger = new Logger(fileName);
+        }
+        return logger;
     }
 
     private void startLogger(){

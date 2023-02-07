@@ -1,1 +1,2 @@
+Logger 1
 Logger 2
