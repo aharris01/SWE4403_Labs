@@ -4,6 +4,7 @@ public class Logger {
     private static Logger instance;
     private static ArrayList<String> files = new ArrayList<>();
     private String fileName;
+    private ArrayList<String> contents = new ArrayList<>();
 
     private Logger(String fileName) {
         files.add(fileName);
@@ -17,6 +18,14 @@ public class Logger {
     }
 
     public void write(String message) {
-        System.out.println("Writing a message to the log.");
+        contents.add(message);
+    }
+
+    public String toString(){
+        String output = "";
+        for (String string : contents) {
+            output += string + "\n";
+        }
+        return output;
     }
 }
