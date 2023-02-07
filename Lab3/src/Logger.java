@@ -3,19 +3,17 @@ import java.io.*;
 public class Logger {
     private static Logger logger;
     private String fileName;
-    private static File file;
+    private static FileOutputStream file;
     private PrintWriter writer;
 
     private Logger(String fileName) {
         this.fileName = fileName;
-        file = new File(fileName);
     }
 
     public void write(String message) {
         System.out.println("Writing a message to the log.");
         startLogger();
         writer.println(message);
-        writer.flush();
         closeLogger();
     }
 
@@ -28,7 +26,8 @@ public class Logger {
 
     private void startLogger(){
         try{
-            writer = new PrintWriter(fileName);
+            file = new FileOutputStream(fileName);
+            writer = new PrintWriter(file);
         } catch(Exception e){
             System.out.println(e);
         }
@@ -37,6 +36,7 @@ public class Logger {
     public void closeLogger(){
         try{
             writer.close();
+            file.close();
         } catch(Exception e){
             System.out.println(e);
         }
