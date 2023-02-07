@@ -3,15 +3,20 @@ import java.io.*;
 public class Logger {
     private static Logger logger;
     private String fileName;
-    private static PrintWriter file;
+    private static File file;
+    private PrintWriter writer;
 
     private Logger(String fileName) {
         this.fileName = fileName;
-        startLogger();
+        file = new File(fileName);
     }
+
     public void write(String message) {
         System.out.println("Writing a message to the log.");
-        file.println(message);
+        startLogger();
+        writer.println(message);
+        writer.flush();
+        closeLogger();
     }
 
     public static Logger getInstance(String fileName){
@@ -23,15 +28,15 @@ public class Logger {
 
     private void startLogger(){
         try{
-            file = new PrintWriter(fileName);
+            writer = new PrintWriter(fileName);
         } catch(Exception e){
             System.out.println(e);
         }
     }
 
-    public static void closeLogger(){
+    public void closeLogger(){
         try{
-            file.close();
+            writer.close();
         } catch(Exception e){
             System.out.println(e);
         }

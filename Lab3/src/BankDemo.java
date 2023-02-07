@@ -11,7 +11,5 @@ public class BankDemo {
 
         transfers.transfer(002, 001, 50);
         transfers.transfer(003, 002, 1000);
-
-        Logger.closeLogger();
     }
 }
