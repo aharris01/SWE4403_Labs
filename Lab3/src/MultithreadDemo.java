@@ -14,11 +14,6 @@ class connectionOne implements Runnable{
     public void run() {
         Logger logger = Logger.getLogger("Database");
         logger.write("Connection one writes once");
-        try{
-            Thread.sleep(500);
-        } catch(Exception e){
-            System.out.println(e);
-        }
         logger.write("Connection one writes twice");
         logger.write("Connection one writes three times\n");
         System.out.println("Connection one Logger contents: \n");
