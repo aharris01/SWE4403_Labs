@@ -1,20 +1,24 @@
 import java.util.ArrayList;
 
 public class Logger {
-    private static Logger instance;
-    private static ArrayList<String> files = new ArrayList<>();
+    private Logger instance;
+    private static ArrayList<Logger> files = new ArrayList<>();
     private String fileName;
     private ArrayList<String> contents = new ArrayList<>();
 
     private Logger(String fileName) {
-        files.add(fileName);
         this.fileName = fileName;
     }
     public static Logger getLogger(String fileName){
-        if(!files.contains(fileName)){
-            instance = new Logger(fileName);
+        for(Logger instance: files){
+
+            if(instance.fileName == fileName)
+                return instance;
         }
-        return instance;
+
+        Logger newLogger = new Logger(fileName);
+        files.add(newLogger);
+        return newLogger; 
     }
 
     public void write(String message) {
