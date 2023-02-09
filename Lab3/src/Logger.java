@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Logger {
     private Logger instance;
-    private static ArrayList<Logger> files = new ArrayList<>();
+    private static HashMap<String, Logger> files = new HashMap<>();
     private String fileName;
     private ArrayList<String> contents = new ArrayList<>();
 
@@ -10,14 +11,12 @@ public class Logger {
         this.fileName = fileName;
     }
     public static Logger getLogger(String fileName){
-        for(Logger instance: files){
-
-            if(instance.fileName == fileName)
-                return instance;
+        if(files.containsKey(fileName)){
+            return files.get(fileName);
         }
 
         Logger newLogger = new Logger(fileName);
-        files.add(newLogger);
+        files.put(fileName, newLogger);
         return newLogger; 
     }
 
