@@ -1,14 +1,23 @@
 public class BankDemo {
     public static void main(String[] args){
-        Logger withdrawals = Logger.getLogger("TransactionLog");
-        Logger deposits = Logger.getLogger("TransactionLog");
-        Logger transfers = Logger.getLogger("TransactionLog");
+        Account acc1 = new Account(100);
+        Account acc2 = new Account(101);
+        Account acc3 = new Account(102);
 
-        withdrawals.write("Account 002 withdraws 100$");
-        deposits.write("Account 002 deposits 450$");
-        withdrawals.write("Account 001 withdraws 1$");
-        transfers.write("Account 002 sends 100$ to Account 003");
+        acc1.deposit(10000);
 
-        System.out.println("Log history: \n" + withdrawals);
+        acc2.withdraw(200);
+
+        acc3.deposit(5000);
+        acc3.transfer(500, acc2);
+
+        acc2.withdraw(500);
+
+        acc1.withdraw(5000);
+
+        Logger logger = acc1.getLogger();
+
+        System.out.println("Transactions of the day");
+        System.out.print(logger);
     }
 }
