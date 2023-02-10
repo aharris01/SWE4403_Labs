@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Logger {
-    private static HashMap<String, Logger> files = new HashMap<>();
+    private volatile static HashMap<String, Logger> files = new HashMap<>();
     private String fileName;
     private ArrayList<String> contents = new ArrayList<>();
 
