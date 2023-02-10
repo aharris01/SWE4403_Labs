@@ -23,6 +23,10 @@ public class Logger {
         contents.add(message);
     }
 
+    public static HashMap<String, Logger> getFiles(){
+        return files;
+    }
+
     public String toString(){
         String output = "";
         for (String string : contents) {

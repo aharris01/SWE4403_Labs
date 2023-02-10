@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 public class MultithreadDemo {
     public static void main(String[] args){
         Thread t1 = new Thread(new connectionOne());
@@ -16,8 +18,16 @@ class connectionOne implements Runnable{
         logger.write("Connection one writes once");
         logger.write("Connection one writes twice");
         logger.write("Connection one writes three times\n");
+
+        try{
+            Thread.sleep(2000);
+        }catch(Exception e){}
+
         System.out.println("Connection one Logger contents: \n");
         System.out.print(logger);
+
+        System.out.print("Connection one logger hashcode: ");
+        System.out.println(logger.hashCode() + "\n");
     }
 }
 
@@ -31,5 +41,8 @@ class connectionTwo implements Runnable{
         logger.write("Connection two writes three times\n");
         System.out.println("Connection two Logger contents: \n");
         System.out.print(logger);
+
+        System.out.print("Connection two logger hashcode: ");
+        System.out.println(logger.hashCode() + "\n");
     }
 }
