@@ -10,21 +10,21 @@ public class Logger {
         this.fileName = fileName;
     }
     public static Logger getLogger(String fileName){
-        if(files.containsKey(fileName)){
-            return files.get(fileName);
+        if(!files.containsKey(fileName)){
+            synchronized(files){
+                if(!files.containsKey(fileName)){
+                    Logger newLogger = new Logger(fileName);
+                    files.put(fileName, newLogger);
+                    return newLogger;
+                }
+            }
         }
 
-        Logger newLogger = new Logger(fileName);
-        files.put(fileName, newLogger);
-        return newLogger; 
+        return files.get(fileName); 
     }
 
     public void write(String message) {
         contents.add(message);
-    }
-
-    public static HashMap<String, Logger> getFiles(){
-        return files;
     }
 
     public String toString(){
