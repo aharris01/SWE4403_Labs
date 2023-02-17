@@ -1,0 +1,29 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>250</x><y>100</y><w>330</w><h>50</h></coordinates><panel_attributes>Client
+--
++ getCustomers(ArrayList&lt;Person&gt;): ArrayList&lt;Customer&gt;</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>310</x><y>230</y><w>210</w><h>110</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+Customer
+--
+/+ getLastName(): String/
+/+ getFirstName(): String/
+/+ setLastName(String): void/
+/+ setFirstName(String): void/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>380</y><w>230</w><h>150</h></coordinates><panel_attributes>&lt;&lt;Interface&gt;&gt;
+PersonToCustomerAdapter
+--
+- lastName: String
+- firstName: String
+--
++ PersonToCustomerAdapter(Person)
++ getLastName(): String
++ getFirstName(): String
++ setLastName(String): void
++ setFirstName(String): void
++ toString(): String
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>330</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>140</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>20</x><y>450</y><w>210</w><h>90</h></coordinates><panel_attributes>Person
+--
+- fullName: String
+--
++ getFullName(): String
++ setFullName(String): void
++ toString(): String</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>110</x><y>400</y><w>210</w><h>80</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>190;60;160;60;160;20;10;20;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>40</y><w>100</w><h>30</h></coordinates><panel_attributes>Demo</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>60</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element></diagram>
