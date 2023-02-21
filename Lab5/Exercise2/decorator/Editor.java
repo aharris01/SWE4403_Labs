@@ -1,4 +1,4 @@
-package com.designpatterns.decorator;
+package decorator;
 
 public class Editor {
     public void openProject(String path) {
@@ -12,7 +12,7 @@ public class Editor {
         artefacts[0].setMain(true);
         artefacts[2].setHasError(true);
 
-        for (var artefact : artefacts)
+        for (Artefact artefact : artefacts)
             System.out.println(artefact.render());
     }
 }

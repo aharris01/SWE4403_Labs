@@ -1,4 +1,4 @@
-package com.designpatterns.decorator;
+package decorator;
 
 public class Artefact {
     private String name;

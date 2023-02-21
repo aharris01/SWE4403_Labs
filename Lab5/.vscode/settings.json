@@ -1,6 +1,8 @@
 {
     "java.project.sourcePaths": [
-        "Solution1"
+        "Solution1",
+        "Exercise2",
+        "Solution2"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
