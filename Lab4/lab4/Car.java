@@ -1,5 +1,3 @@
-package com.java.lab4;
-
 class Car extends Vehicle {
 public Car(Workshop w1, Workshop w2) 
     { 

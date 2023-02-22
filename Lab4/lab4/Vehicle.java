@@ -1,5 +1,3 @@
-package com.java.lab4;
-
 abstract class Vehicle {
 	protected Workshop w1; 
 	protected Workshop w2; 

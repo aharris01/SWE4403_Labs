@@ -1,4 +1,4 @@
-package com.java.lab4;
+
 
 class Bike extends Vehicle {
 public Bike(Workshop w1, Workshop w2) 
