@@ -8,7 +8,7 @@ public class Demo {
     DbContext dbContext = new DbContext();
 
     // We read an object (eg a product) from a database.
-    Product product = dbContext.getProduct(1);
+    ProductProxy product = new ProductProxy(dbContext.getProduct(1).getId(), dbContext);
 
     // We modify the properties of the object in memory.
     product.setName("Updated Name");

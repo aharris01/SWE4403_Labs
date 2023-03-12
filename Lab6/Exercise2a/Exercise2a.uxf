@@ -1,0 +1,33 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>120</x><y>440</y><w>240</w><h>280</h></coordinates><panel_attributes>Cell
+--
+- row: int
+- column: int
+- content: String
+- fontFamily: String
+- fontSize: int
+- isBold: boolean
+--
++ Cell(int row, int column)
++ getContent(): String
++ setContent(String content): void
++ getFontFamily(): String
++ setFontFamily(String fontFamily): void
++ getFontSize(): int
++ setFontSize(int fontSize): void
++ isBold(): boolean
++ setBold(boolean isBold): void
++ render(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>130</y><w>320</w><h>220</h></coordinates><panel_attributes>SpreadSheet
+--
+- MAX_ROWS: int = 3
+- MAX_COLS: int = 3
+- fontFamily: String = "Times New Roman"
+- fontSize: int = 12
+- isBold: boolean = false
+- cells: Cell[MAX_ROWS][MAX_COLS]
+--
++ SpreadSheet()
++ setContent(int rows, int cols, String content): void
++ setFontFamily(int row, int col, String fontFamily): void
++ ensureCellExists(int row, int col): void
++ generateCells(): void
++ render(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>70</x><y>230</y><w>180</w><h>230</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>50;10;10;10;10;180;160;180;160;210</additional_attributes></element></diagram>
