@@ -12,8 +12,9 @@ public class ConcreteProductIterator implements ProductIterator{
     @Override
     public Product getNext() {
         if(!hasNext()) return null;
+        Product product = collection.products.get(currentPosition);
         currentPosition++;
-        return collection.products.get(currentPosition);
+        return product;
     }
 
     @Override
