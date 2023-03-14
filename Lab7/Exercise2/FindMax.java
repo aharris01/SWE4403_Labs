@@ -11,10 +11,11 @@ public class FindMax {
         System.out.println(list);
 
         int currentMax = 0;
-        Iterator iterator = list.iterator();
+        Iterator<Integer> iterator = list.iterator();
         while(iterator.hasNext()){
-            int next = iterator.
-            if(currentMax < )
+            int next = iterator.next();
+            if(currentMax < next) currentMax = next;
+            System.out.println(currentMax);
         }
     }
 }
