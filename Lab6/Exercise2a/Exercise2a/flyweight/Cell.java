@@ -1,4 +1,4 @@
-package flyweight;
+package Exercise2a.flyweight;
 
 public class Cell {
   private final int row;

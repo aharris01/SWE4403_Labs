@@ -1,0 +1,40 @@
+<diagram program="umletino" version="15.0.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>210</x><y>380</y><w>330</w><h>170</h></coordinates><panel_attributes>Cell
+--
+- row: int
+- column: int
+- content: String
+- context: CellContext
+--
++ Cell(in row : int, in column : int, in context : CellContext)
++ setContent(in content : String): void
++ getContext(): CellContext
++ setContext(in context : CellContext): void
++ render(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>190</x><y>660</y><w>410</w><h>160</h></coordinates><panel_attributes>CellContext
+--
+- fontFamily: String
+- fontSize: int
+- isBold: boolean
+--
++ CellContext(in fontFamily : String, in fontSize : int, in isBold : boolean)
++ getFontFamily(): String
++ getFontSize(): int
++ isBold(): boolean
++ hashCode(): int</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>650</x><y>660</y><w>480</w><h>70</h></coordinates><panel_attributes>CellContextFactory
+--
+- contexts: Map&lt;Integer, CellContext&gt;
+--
++ getContext(in fontFamily : String, in fontSize : int, in isBold : boolean): CellContext</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>200</x><y>70</y><w>380</w><h>220</h></coordinates><panel_attributes>SpreadSheet
+--
+- MAX_ROWS: int = 3
+- MAX_COLS: int = 3
+- fontFamily: String = "Times New Roman"
+- fontSize: int = 12
+- isBold: boolean = false
+- cells: Cell[MAX_ROWS][MAX_COLS]
+--
++ SpreadSheet()
++ setContent(in rows : int, in cols : int, in content : String): void
++ setFontFamily(in row : int, in col : int, in fontFamily : String): void
++ ensureCellExists(in row : int, in col : int): void
++ generateCells(): void
++ render(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>130</x><y>450</y><w>290</w><h>230</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>80;10;10;10;10;170;270;170;270;210</additional_attributes></element><element><id>Relation</id><coordinates><x>390</x><y>610</y><w>280</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>260;80;230;80;230;10;10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>170</y><w>260</w><h>230</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>60;10;10;10;10;170;240;170;240;210</additional_attributes></element></diagram>

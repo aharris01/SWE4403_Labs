@@ -1,5 +1,4 @@
 package flyweight;
-
 public class SpreadSheet {
   private final int MAX_ROWS = 3;
   private final int MAX_COLS = 3;
