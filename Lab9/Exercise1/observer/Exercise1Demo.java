@@ -12,8 +12,13 @@ public class Exercise1Demo {
         statusBar.addStock(stock1);
         statusBar.addStock(stock2);
 
+        listView.show();
+        statusBar.show();
+
         stock1.setPrice(0.75f);
         stock2.setPrice(0.02f);
 
+        listView.show();
+        statusBar.show();
     }
 }
